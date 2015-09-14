@@ -1,8 +1,269 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* common style */
+body
+{
+  background-color: #ebebeb;
+  color: #505050;
+}
+header
+{
+  background: url(../img/banner.jpg);
+  height: 265px;
+  overflow: hidden;
+}
+a:link
+{
+  text-decoration: none;
+}
+/* index page style */
+.box
+{
+  width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+.texts {
+  width: 350px;
+  line-height: 26px;
+  margin: 75px 0 0;
+  float: left;
+  font-size: 14px;
+}
+.texts p {
+    margin-bottom: 0;
+    -webkit-transform: translate(60px);
+    -moz-transform: translate(60px);
+    -o-transform: translate(60px);
+    -ms-transform: translate(60px);
+    transform: translate(60px);
+    text-shadow: 1px 1px 0 rgba(255,255,255,.8),2px 2px 3px rgba(180,151,151,.3);
+}
+.avatar
+{
+  margin: 50px;
+  width: 130px;
+  height: 130px;
+  border-radius: 100%;
+  overflow: hidden;
+  border: #fff 4px solid;
+  padding: 0;
+}
+.avatar a {
+  display: block;
+  width: 130px;
+}
+.avatar a span {
+  display: block;
+  width: 130px;
+  height: 130px;
+  text-align: center;
+  line-height: 130px;
+  color: #fff;
+  background: rgba(0,0,0,.5);
+  -webkit-transition: margin-top .2s ease-in-out;
+  -moz-transition: margin-top .2s ease-in-out;
+  -o-transition: margin-top .2s ease-in-out;
+  transition: margin-top .2s ease-in-out;
+}
+.avatar a.logined
+{
+  padding-top: 90px;
+  background-size: contain;
+}
+.avatar a.logined span
+{
+  line-height: 20px;
+  margin-top: 130px;
+}
+.avatar a.logined:hover span
+{
+  margin-top: 5px;
 }
 
-a {
-  color: #00B7FF;
+
+.sidebar-btn {
+  position: fixed;
+  top: 5%;
+  left: 2%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0px;
+  outline: none;
+  z-index: 100;
+}
+.sidebar-btn div
+{
+  height: 0px;
+  border: 1.5px solid #fff;
+  width: 22px;
+  display: block;
+  position: absolute;
+  background:#fff;  
+}
+.sidebar-btn div:nth-child(1) {
+  top: 0px;
+}
+.sidebar-btn div:nth-child(2) {
+  top: 8px;
+}
+.sidebar-btn div:nth-child(3) {
+  top: 16px;
+}
+.sidebar-btn.close-side
+{
+  left: 150px;
+}
+.sidebar-btn.close-side div:nth-child(1)
+{
+  top: 8px;
+  transform: rotate(-45deg);
+}
+.sidebar-btn.close-side div:nth-child(2)
+{
+  width: 0;
+  border: 0;
+}
+.sidebar-btn.close-side div:nth-child(3)
+{
+  top: 8px;
+  transform: rotate(45deg);
+}
+.sidebar-btn:hover div {
+  border: 2px solid #fff;
+  width: 25px;
+}
+
+.sidebar
+{
+	width: 200px;
+	height: 100%;
+	background-color: rgba(205,205,205,.5);
+	position: absolute;
+	top: 0;
+	left: -200px;
+	z-index: 1;
+}.sidebar ul
+
+{
+	list-style: none;
+	padding: 60px 0;
+}
+.sidebar ul li
+{
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	text-shadow: 1px 1px 0 rgba(0,0,0,.8);
+	color: #fff;
+}
+.sidebar ul li:hover
+{
+	background-color: rgba(205,205,205,.8);
+}
+
+/* resigter page style */
+.reg-box
+{
+  width: 660px;
+  margin-top: 100px;
+}
+.reg-box-form
+{
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 10px;
+}
+.login-box
+{
+  width: 420px;
+  margin-top: 100px;
+}
+.login-box-form
+{
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 30px 60px;
+}
+.login-box-form .form-group
+{
+  margin-bottom: 25px;
+}
+.login-box-form .form-control
+{
+  margin-bottom: 0;
+}
+.login-box-form .glyphicon
+{
+  top: 0;
+}
+.checkbox
+{
+  margin-bottom: 20px;
+}
+
+.main-nav
+{
+  text-align: center;
+  background: #ffffff;
+  border-top: 1px solid #ebebeb;
+  margin: 0 auto 35px;
+  border-bottom: 2px solid #e1e1e1;
+}
+.main-nav .menu>li{
+  display: inline-block;
+}
+.main-nav .menu>li.nav-current {
+  border-bottom: 2px solid #f4645f;
+}
+.main-nav .menu>li>a {
+  color: #505050;
+  line-height: 4em;
+  display: block;
+  padding: 0 21px;
+}
+.main-nav .menu>li:hover > a ,.dropdown-menu>li:hover > a{
+  color: #f4645f;
+  text-decoration: none;
+  background-color: #fff;
+}
+.main-nav .menu>li>a:active {
+  outline: none;
+}
+.main-nav .navbar-toggle
+{
+  float: none;
+  margin-right: 0;
+}
+.main-nav .navbar-toggle .icon-bar
+{
+  background-color: #505050;
+}
+@media screen and (max-width: 768px) {
+  .main-nav .menu li {
+    display: block;
+  }
+}
+.menu .dropdown-menu>li {
+  border-bottom: 1px #ccc solid;
+}
+.arrow:before,.arrow:after
+{
+  content: "";
+  display: block;
+  line-height: 0;
+  font-size: 0;
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-width: 10px;
+  border-style: dashed dashed solid dashed;
+  border-color: transparent transparent rgba(0,0,0,.15) transparent;
+  top: -20px;
+  left: 45px;
+}
+.arrow:after
+{
+  top: -18px;
+  border-bottom-color: #fff;
 }

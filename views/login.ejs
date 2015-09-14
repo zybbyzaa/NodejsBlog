@@ -1,0 +1,42 @@
+<%- include header %>
+  <body>
+  	<div class="container login-box">
+      <div class="row login-box-header text-center">
+    	<a class="form-logo" href="/">
+        <img src="img/logo.png" alt="nodejsblog" width="200px">
+      </a>
+      </div>
+      <form class="row login-box-form well" method="post">
+      	<div class="form-group">
+      	  <div class="input-group">
+      	    <span class="input-group-addon glyphicon glyphicon-user"></span>
+      	    <input class="form-control" id="username" name="username" value="<%=user!=undefined?user.name:''%>" 
+      	  		 required="required" type="text" placeholder="请输入用户名">
+      	  </div>
+      	</div>
+      	<div class="form-group">
+      	  <div class="input-group">
+      	    <span class="input-group-addon glyphicon glyphicon-lock"></span>
+      	    <input class="form-control" id="password" name="password" value="<%=user!=undefined?user.pass:''%>"
+      	         required="required" type="password" placeholder="请输入密码">
+      	  </div>
+      	</div>
+      	<div class="checkbox">
+	      <label><input type="checkbox" name="rember">记住我</label>
+	      <label><a href="/reg" class="pull-right">立即注册</a></label>
+	    </div>
+      	<div class="form-group">
+      	  <input class="btn btn-lg btn-success btn-block" name="commit" type="submit" value="登录">
+      	</div>
+      </form>  
+      <% if (error!="") { %>
+        <div class="alert alert-danger" role="alert"><%= error %></div>
+      <% } %>
+      <% if (success!="") { %>
+        <div class="alert alert-success" role="alert"><%= success %></div>
+      <% } %>	
+  	</div>
+    <%- include footer %>
+    <%- include script %>
+  </body>
+</html>
