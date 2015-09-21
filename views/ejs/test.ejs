@@ -1,0 +1,12 @@
+<% if(type == 0) {%>
+<p id="p">测试！！！！</p>
+<%}%>
+	<script>
+	$(document).ready(function() {
+		$("#test-btn").click(function(event) {
+			/* Act on the event */
+			$("#test-div").load('/test #p',{type: 1});			
+		});
+	});
+	</script>
+

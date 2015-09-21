@@ -1,0 +1,81 @@
+<%- include head %>
+  <link href="style/userCenter.css" rel="stylesheet">
+  </head>
+  <body>
+	<%- include header %>
+	<div class="container content clearfix">
+		<nav class="user-nav">
+			<div class="user-common-title">个人中心</div>
+			<div class="user-nav-content">
+				<a href="#main" class="active">主页</a>
+				<a href="#article">我的文章</a>
+				<a href="#album">我的相册</a>
+			</div>
+		</nav>
+		<div class="user-box">
+			<div class="box-content">
+				<div class="user-box-profile">
+					<div class="user-common-title">我的信息</div>
+					<div class="user-box-profile-content clearfix">
+						<div class="profile-face pull-left">
+							<img src="<%= 'uploads/icon/'+user.icon %>">
+						</div>
+						<div class="profile-info pull-left">
+							<h4 style="margin-bottom: 30px;"><%= user.name %></h4>
+							<a class="logout-link" href="/logout">注销</a>
+						</div>
+						<div class="profile-counter pull-right">
+							<div class="profile-counter-g">
+								<p><a href="#favorite_article" class="t">我的文章</a></p>
+								<p><a href="#favorite_article">3</a></p>
+							</div>
+							<div class="profile-counter-g">
+								<p><a href="#favorite_album" class="t">我的相册</a></p>
+								<p><a href="#favorite_album">3</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="user-box-operation">
+					<div class="user-common-title">我的操作</div>
+					<div class="user-box-operation-tab">
+						<a class="active" href="">资料修改</a>
+						<a href="">更换头像</a>
+					</div>
+					<div class="user-box-operation-content">	
+						<form method="post" action="/updateInfo">
+							<div class="form-group">
+				              <label class="control-label" for="username">用户名</label>
+				              <input class="form-control" id="username" name="username" value="<%= user.name %>" 
+				              		 required="required" type="text" readonly>
+				            </div>
+				            <div class="form-group">
+				              <label class="control-label" for="password">密码</label>
+				              <input class="form-control" id="password" name="password" value="<%= user.password %>" 
+				              		 required="required" type="password">
+				            </div>
+				            <div class="form-group">
+				              <label class="control-label" for="password2">密码确认</label>
+				              <input class="form-control" id="password2" name="password2" 
+				              		 required="required" type="password">
+				            </div>
+				            <div class="form-group">
+				              <label class="control-label" for="email">邮箱</label>
+				              <input class="form-control" id="email" name="email" value="<%= user.email %>" 
+				              		 required="required" type="email">
+				            </div>
+				            <div class="form-group" style="padding-top:15px;">
+				              <input class="btn btn-lg btn-success btn-block" name="commit" type="submit" value="修改">
+				            </div>	
+						</form>				
+					</div>
+					<div class="user-box-operation-contnt hidden">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<%- include footer %>
+	<%- include script %>
+  </body>
+</html>

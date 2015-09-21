@@ -1,0 +1,45 @@
+<%- include head %>
+  <link href="style/chat.css" rel="stylesheet">
+  </head>
+  <body>
+	<%- include header %>
+	<div class="container chat-box">
+        <% comments.forEach(function (comment, index) { %>
+        <div class="chat-box-item clearfix">
+        	<div class="chat-box-item-reviewer pull-left">
+        		<img class="chat-box-item-icon" src=<%= "uploads/icon/"+ comment.reviewer.icon %> alt="">
+                <span class="chat-box-item-username"><%= comment.reviewer.name %></span>
+            </div>
+            <div class="chat-box-item-body clearfix">                               
+                <p class="chat-box-item-content"><%= comment.content %></p>
+                <div class="chat-box-item-bottom pull-right">
+                	<span class="chat-box-item-date"><%= comment.day %></span>
+                	<a class="reply" href=<%= comment._id %>>回复</a>
+                </div>
+            </div> 
+            <% for (var i in comment.reply) { %>
+            <div class="chat-box-item-reply clearfix">
+	            <div class="chat-box-item-reviewer pull-left">
+	        		<img class="chat-box-item-icon" src=<%= "uploads/icon/"+ comment.reply[i].reviewer.icon %> alt="">
+	                <span class="chat-box-item-username"><%= comment.reply[i].reviewer.name %></span>
+	            </div>
+	            <div class="chat-box-item-body">                               
+	                <p class="chat-box-item-content"><%= comment.reply[i].content %></p>
+	                <div class="chat-box-item-bottom pull-right">
+	                	<span class="chat-box-item-date"><%= comment.reply[i].day %></span>
+	                </div>
+	            </div>  
+	        </div>
+            <% } %>       
+        </div>
+        <% }) %>
+        <form class="chat-box-form" method="post">
+        	<textarea class="chat-box-form-content" name="content" placeholder="说点什么吧"></textarea>
+        	<input name="replyId" type="hidden"></input>
+        	<input class="btn-chat pull-right" type="submit" value="留言"></input>
+        </form>
+	</div>
+	<%- include footer %>
+	<%- include script %>
+  </body>
+</html>
